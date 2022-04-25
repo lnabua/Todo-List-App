@@ -13,6 +13,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Todo-List-App" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.webjars:bootstrap:3.3.6" />
+          <element id="library" level="project" name="Maven: org.webjars:jquery:1.9.1" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/Todo-List-App-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />

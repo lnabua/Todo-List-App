@@ -8,16 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/todo.do")
-public class TodoServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/delete-todo.do")
+public class DeleteTodoServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private TodoService todoService = new TodoService();
 
-    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-        request.setAttribute("todos", todoService.retrieveTodos());
-        request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
+        todoService.deleteTodo(new Todo(request.getParameter("todo")));
+        response.sendRedirect("list-todo.do");
     }
 }
